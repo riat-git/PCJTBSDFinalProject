@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package view.controlPanel;
 
 /**
@@ -17,6 +16,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
      */
     public ControlPanel() {
         initComponents();
+        visibility();
     }
 
     /**
@@ -30,6 +30,11 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
         label_heading = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        desktopPane_userAccount = new javax.swing.JDesktopPane();
+        tabbedPane_userAccount = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jButton1 = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setClosable(true);
@@ -42,16 +47,66 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         getContentPane().add(label_heading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 780, 40));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 780, 10));
 
+        desktopPane_userAccount.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tabbedPane_userAccount.setBackground(new java.awt.Color(255, 255, 255));
+        tabbedPane_userAccount.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        tabbedPane_userAccount.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+
+        tabbedPane_userAccount.addTab("Account Details", jPanel1);
+
+        desktopPane_userAccount.add(tabbedPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 500));
+
+        getContentPane().add(desktopPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 790, 500));
+
+        jButton1.setText("User Account");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 140, 70));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background/background.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 575));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        desktopPane_userAccount.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JDesktopPane desktopPane_userAccount;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_heading;
+    private javax.swing.JTabbedPane tabbedPane_userAccount;
     // End of variables declaration//GEN-END:variables
+
+    final void visibility() {
+        desktopPane_userAccount.setVisible(false);
+    }
+
 }
