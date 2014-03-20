@@ -17,6 +17,7 @@ public class PCJTBSDFinalProject {
      */
     public static void main(String[] args) {
         System.out.println("Git clone test ok!!!");
+        System.out.println("Done!!!!!!!!!");
     }
     
 }
