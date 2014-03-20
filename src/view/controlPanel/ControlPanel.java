@@ -28,22 +28,22 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        label_heading = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         background = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Control Panel");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("   Control Panel");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 40));
+        label_heading.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        label_heading.setForeground(new java.awt.Color(0, 0, 204));
+        label_heading.setText("   Control Panel");
+        getContentPane().add(label_heading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 780, 40));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 780, 10));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background/background.jpg"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 575));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 575));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -51,6 +51,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel label_heading;
     // End of variables declaration//GEN-END:variables
 }
