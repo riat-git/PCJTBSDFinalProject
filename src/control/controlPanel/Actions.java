@@ -5,13 +5,13 @@
  */
 package control.controlPanel;
 
+import model.controlPanel.Validation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import model.controlPanel.Update;
-import model.controlPanel.Validation;
 
 /**
  *
@@ -22,9 +22,6 @@ public class Actions {
     Update update;
     Validation validation;
 
-    String currentPass;
-    String newPass;
-    String confirmPass;
     String loginId;
 
     public Actions(String loginId) {
@@ -39,27 +36,18 @@ public class Actions {
         }
     }
 
-    public void actionPassword(JButton changePass, final JPasswordField currentPass, final JPasswordField newPass, final JPasswordField confirmPass) {
+    public void actionPassword(String currentPass, String newPass, String confirmPass) {
 
-        this.currentPass = new String(currentPass.getPassword());
-        this.newPass = new String(newPass.getPassword());
-        this.confirmPass = new String(confirmPass.getPassword());
-
-        changePass.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (validation.checkCurrPassword(Actions.this.currentPass, loginId)) {
-                    if (validation.checkNewPass(Actions.this.newPass, Actions.this.confirmPass)) {
-                        update.changePassword(Actions.this.newPass, loginId);
-                    }else{
-                        response.Response.error("Sorry 'New Password and Confirm Password' you entered did not match! :-(");
-                    }
-                }else{
-                    response.Response.error("Sorry The current password you entered is incorrect! :-(");
-                }
+        if (validation.checkCurrPassword(currentPass, loginId)) {
+            if (validation.checkNewPass(newPass, confirmPass)) {
+                update.changePassword(newPass, loginId);
+            } else {
+                response.Response.error("Sorry 'New Password and Confirm Password' you entered did not match! :-(");
             }
-        });
+        } else {
+            response.Response.error("Sorry The current password you entered is incorrect! :-(");
+        }
+
     }
 
 }

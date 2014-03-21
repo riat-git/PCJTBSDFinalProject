@@ -10,6 +10,8 @@ import javax.swing.JComponent;
 import model.controlPanel.BackKey;
 import model.controlPanel.PanelVisibility;
 import javax.swing.JDesktopPane;
+import model.controlPanel.Update;
+import model.controlPanel.Validation;
 
 /**
  *
@@ -60,12 +62,12 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         label_currentPassword = new javax.swing.JLabel();
         label_newPassword = new javax.swing.JLabel();
         label_confirmPassword = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        pass_confirmPass = new javax.swing.JPasswordField();
+        pass_currentPass = new javax.swing.JPasswordField();
+        pass_newPass = new javax.swing.JPasswordField();
         label_noteChangePassword = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_changePassword = new javax.swing.JButton();
+        btn_cancelChangePassword = new javax.swing.JButton();
         seperator_changePassword = new javax.swing.JSeparator();
         panel_changeAccountPicture = new javax.swing.JPanel();
         label_changeAccountPictureHeader = new javax.swing.JLabel();
@@ -197,18 +199,23 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
         label_confirmPassword.setText("Confirm Password");
         panel_changeAccountPassword.add(label_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 130, 30));
-        panel_changeAccountPassword.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 260, 30));
-        panel_changeAccountPassword.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 260, 30));
-        panel_changeAccountPassword.add(jPasswordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 260, 30));
+        panel_changeAccountPassword.add(pass_confirmPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 260, 30));
+        panel_changeAccountPassword.add(pass_currentPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 260, 30));
+        panel_changeAccountPassword.add(pass_newPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 260, 30));
 
         label_noteChangePassword.setText("If your password contains capital letters, they must be typed the same way every time you log on.");
         panel_changeAccountPassword.add(label_noteChangePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 530, 30));
 
-        jButton2.setText("Change Password");
-        panel_changeAccountPassword.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 150, 30));
+        btn_changePassword.setText("Change Password");
+        btn_changePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_changePasswordActionPerformed(evt);
+            }
+        });
+        panel_changeAccountPassword.add(btn_changePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 150, 30));
 
-        jButton3.setText("Cancel");
-        panel_changeAccountPassword.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 70, 30));
+        btn_cancelChangePassword.setText("Cancel");
+        panel_changeAccountPassword.add(btn_cancelChangePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 70, 30));
         panel_changeAccountPassword.add(seperator_changePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 640, 10));
 
         tabbedPane_userAccount.addTab("Change password", panel_changeAccountPassword);
@@ -385,10 +392,16 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         backKey.goBack(panel_backPanel);
     }//GEN-LAST:event_btn_backActionPerformed
 
+    private void btn_changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_changePasswordActionPerformed
+        actions.actionPassword(new String(pass_currentPass.getPassword()), new String(pass_newPass.getPassword()), new String(pass_confirmPass.getPassword()));
+    }//GEN-LAST:event_btn_changePasswordActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_cancelChangePassword;
+    private javax.swing.JButton btn_changePassword;
     private javax.swing.JButton btn_userAccount;
     private javax.swing.JDesktopPane desktopPane_profPicAccDet;
     private javax.swing.JDesktopPane desktopPane_profPicChangeAccountName;
@@ -396,8 +409,6 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JDesktopPane desktopPane_profPicChangePass;
     private javax.swing.JDesktopPane desktopPane_profPicChangePicture;
     private javax.swing.JDesktopPane desktopPane_userAccount;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -406,9 +417,6 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_accountName;
     private javax.swing.JLabel label_accountNameChangeAccountName;
@@ -443,6 +451,9 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panel_changeAccountPassword;
     private javax.swing.JPanel panel_changeAccountPicture;
     private javax.swing.JPanel panel_userAccountHome;
+    private javax.swing.JPasswordField pass_confirmPass;
+    private javax.swing.JPasswordField pass_currentPass;
+    private javax.swing.JPasswordField pass_newPass;
     private javax.swing.JSeparator seperator_changeAccountName;
     private javax.swing.JSeparator seperator_changeAccountPicture;
     private javax.swing.JSeparator seperator_changeAccountType;
@@ -451,19 +462,21 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_newAccountName;
     // End of variables declaration//GEN-END:variables
 
+    String loginId;
+
     private void onGoingMethods() {
         panelVisibility.visibilityFalse(desktopPane_userAccount, panel_backPanel);
     }
 
     private void initMethod() {
-        if (actions == null) {
-            actions = new Actions();
-        }
         if (panelVisibility == null) {
             panelVisibility = new PanelVisibility();
         }
         if (backKey == null) {
             backKey = new BackKey();
+        }
+        if (actions == null) {
+            actions = new Actions(loginId);
         }
     }
 

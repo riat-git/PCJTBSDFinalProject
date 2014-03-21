@@ -15,26 +15,28 @@ import java.sql.ResultSet;
 public class Validation {
 
     connection.Connection connection;
-    
+
     String currentPass;
-    
-    public Validation(){
+
+    public Validation() {
         if (connection == null) {
             connection = new Connection();
         }
     }
 
-    public boolean checkCurrPassword(String newPassword,String getId) {
+    public boolean checkCurrPassword(String currPassword, String getId) {
         try {
-            
+
             boolean b = false;
-            
-            ResultSet rs=connection.getData("SELECT password FROM login WHERE idlogin='"+getId+"'");
-            if(rs.next()){
-               currentPass=rs.getString("password");
-            }
-            if(currentPass.equals(newPassword)){
-                    b= true;
+
+            ResultSet rs = connection.getData("SELECT password FROM login WHERE idlogin='" + getId + "'");
+            if (rs.next()) {
+                currentPass = rs.getString("password");
+                if (currentPass.equals(currPassword)) {
+                    b = true;
+                }
+            }else{
+                response.Response.error("Something isn't right here! :-P");
             }
             return b;
         } catch (Exception e) {
@@ -42,12 +44,8 @@ public class Validation {
             return false;
         }
     }
-    
-    public boolean checkNewPass(String newPass,String confirmPass){
-        if(newPass.equals(confirmPass)){
-            return true;
-        }else{
-            return false;
-        }
+
+    public boolean checkNewPass(String newPass, String confirmPass) {
+        return newPass.equals(confirmPass);
     }
 }
