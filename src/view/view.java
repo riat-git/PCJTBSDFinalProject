@@ -11,5 +11,17 @@ package view;
  * @author Naveen
  */
 public class view {
+    public static void main(String[] args) {
+        view a=new view();
+        
+        if(a.m()){
+            System.out.println("right");
+        }else{
+            System.out.println("null");
+        }
+    }
     
+    public boolean m(){
+        return false;
+    }
 }
