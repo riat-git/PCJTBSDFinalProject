@@ -10,7 +10,6 @@ package control.controlPanel;
  * @author Naveen
  */
 public class Actions {
-    public void runCommands() {
 
-    }
+   
 }

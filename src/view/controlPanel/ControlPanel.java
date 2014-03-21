@@ -6,7 +6,6 @@
 package view.controlPanel;
 
 import control.controlPanel.Actions;
-import java.awt.Component;
 import javax.swing.JComponent;
 import model.controlPanel.BackKey;
 import model.controlPanel.PanelVisibility;
@@ -44,7 +43,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         label_heading = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         panel_backPanel = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
+        btn_back = new javax.swing.JButton();
         desktopPane_userAccount = new javax.swing.JDesktopPane();
         tabbedPane_userAccount = new javax.swing.JTabbedPane();
         panel_userAccountHome = new javax.swing.JPanel();
@@ -101,7 +100,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         seperator_changeAccountType = new javax.swing.JSeparator();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_userAccount = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setClosable(true);
@@ -117,13 +116,13 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         panel_backPanel.setBackground(new java.awt.Color(255, 255, 255));
         panel_backPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton10.setText("Back");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btn_back.setText("Back");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btn_backActionPerformed(evt);
             }
         });
-        panel_backPanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2, 80, 30));
+        panel_backPanel.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2, 80, 30));
 
         getContentPane().add(panel_backPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 48, 790, 35));
 
@@ -364,13 +363,13 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
         getContentPane().add(desktopPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 790, 480));
 
-        jButton1.setText("User Account");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_userAccount.setText("User Account");
+        btn_userAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_userAccountActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 140, 70));
+        getContentPane().add(btn_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 140, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background/background.jpg"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 575));
@@ -378,25 +377,25 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        navigate(desktopPane_userAccount,desktopPane_userAccount,panel_backPanel);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_userAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_userAccountActionPerformed
+        navigate(desktopPane_userAccount, desktopPane_userAccount, panel_backPanel);
+    }//GEN-LAST:event_btn_userAccountActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         backKey.goBack(panel_backPanel);
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btn_backActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_userAccount;
     private javax.swing.JDesktopPane desktopPane_profPicAccDet;
     private javax.swing.JDesktopPane desktopPane_profPicChangeAccountName;
     private javax.swing.JDesktopPane desktopPane_profPicChangeAccountType;
     private javax.swing.JDesktopPane desktopPane_profPicChangePass;
     private javax.swing.JDesktopPane desktopPane_profPicChangePicture;
     private javax.swing.JDesktopPane desktopPane_userAccount;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -452,8 +451,8 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_newAccountName;
     // End of variables declaration//GEN-END:variables
 
-       private void onGoingMethods() {
-        panelVisibility.visibilityFalse(desktopPane_userAccount,panel_backPanel);
+    private void onGoingMethods() {
+        panelVisibility.visibilityFalse(desktopPane_userAccount, panel_backPanel);
     }
 
     private void initMethod() {
@@ -468,8 +467,8 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         }
     }
 
-    private void navigate(JDesktopPane currDesktopPane,JComponent... components) {
-        panelVisibility.visibilityTrue(currDesktopPane,components);
+    private void navigate(JDesktopPane currDesktopPane, JComponent... components) {
+        panelVisibility.visibilityTrue(currDesktopPane, components);
     }
 
 }
