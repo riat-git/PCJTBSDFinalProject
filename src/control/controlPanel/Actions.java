@@ -6,11 +6,6 @@
 package control.controlPanel;
 
 import model.controlPanel.Validation;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import model.controlPanel.Update;
 
 /**

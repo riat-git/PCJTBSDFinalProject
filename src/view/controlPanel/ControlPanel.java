@@ -10,8 +10,7 @@ import javax.swing.JComponent;
 import model.controlPanel.BackKey;
 import model.controlPanel.PanelVisibility;
 import javax.swing.JDesktopPane;
-import model.controlPanel.Update;
-import model.controlPanel.Validation;
+import model.BrowseImage;
 
 /**
  *
@@ -26,6 +25,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     BackKey backKey;
     PanelVisibility panelVisibility;
     Actions actions;
+    BrowseImage browseImage;
 
     public ControlPanel() {
         initComponents();
@@ -72,6 +72,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         panel_changeAccountPicture = new javax.swing.JPanel();
         label_changeAccountPictureHeader = new javax.swing.JLabel();
         desktopPane_profPicChangePicture = new javax.swing.JDesktopPane();
+        label_DPchangeAccountPicture = new javax.swing.JLabel();
         label_accountNameChangePicture = new javax.swing.JLabel();
         label_accountTypeChangePicture = new javax.swing.JLabel();
         label_passwordDetChangePicture = new javax.swing.JLabel();
@@ -80,6 +81,10 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         layeredPane_picturesChangePicture = new javax.swing.JLayeredPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
+        jDesktopPane3 = new javax.swing.JDesktopPane();
+        jDesktopPane4 = new javax.swing.JDesktopPane();
         label_browseForMorePictures = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         label_changeAccountNameHeader = new javax.swing.JLabel();
@@ -232,12 +237,13 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         desktopPane_profPicChangePicture.setLayout(desktopPane_profPicChangePictureLayout);
         desktopPane_profPicChangePictureLayout.setHorizontalGroup(
             desktopPane_profPicChangePictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(label_DPchangeAccountPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         desktopPane_profPicChangePictureLayout.setVerticalGroup(
             desktopPane_profPicChangePictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(label_DPchangeAccountPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+        desktopPane_profPicChangePicture.setLayer(label_DPchangeAccountPicture, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         panel_changeAccountPicture.add(desktopPane_profPicChangePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
@@ -252,32 +258,79 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
         label_noteChangePicture.setText("The picture you choose will appear on the Start menu");
         panel_changeAccountPicture.add(label_noteChangePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 530, 30));
-        panel_changeAccountPicture.add(seperator_changeAccountPicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 640, 10));
+        panel_changeAccountPicture.add(seperator_changeAccountPicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 640, 10));
 
         jButton4.setText("Change Picture");
-        panel_changeAccountPicture.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 150, 30));
+        panel_changeAccountPicture.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 150, 30));
 
         jButton5.setText("Cancel");
-        panel_changeAccountPicture.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 70, 30));
+        panel_changeAccountPicture.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 70, 30));
 
         layeredPane_picturesChangePicture.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        layeredPane_picturesChangePicture.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layeredPane_picturesChangePictureLayout = new javax.swing.GroupLayout(layeredPane_picturesChangePicture);
-        layeredPane_picturesChangePicture.setLayout(layeredPane_picturesChangePictureLayout);
-        layeredPane_picturesChangePictureLayout.setHorizontalGroup(
-            layeredPane_picturesChangePictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
-        layeredPane_picturesChangePictureLayout.setVerticalGroup(
-            layeredPane_picturesChangePictureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 165, Short.MAX_VALUE)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        panel_changeAccountPicture.add(layeredPane_picturesChangePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 520, 170));
+        layeredPane_picturesChangePicture.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
+        jDesktopPane2.setLayout(jDesktopPane2Layout);
+        jDesktopPane2Layout.setHorizontalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane2Layout.setVerticalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        layeredPane_picturesChangePicture.add(jDesktopPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        javax.swing.GroupLayout jDesktopPane3Layout = new javax.swing.GroupLayout(jDesktopPane3);
+        jDesktopPane3.setLayout(jDesktopPane3Layout);
+        jDesktopPane3Layout.setHorizontalGroup(
+            jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane3Layout.setVerticalGroup(
+            jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        layeredPane_picturesChangePicture.add(jDesktopPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
+
+        javax.swing.GroupLayout jDesktopPane4Layout = new javax.swing.GroupLayout(jDesktopPane4);
+        jDesktopPane4.setLayout(jDesktopPane4Layout);
+        jDesktopPane4Layout.setHorizontalGroup(
+            jDesktopPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane4Layout.setVerticalGroup(
+            jDesktopPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        layeredPane_picturesChangePicture.add(jDesktopPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
+        panel_changeAccountPicture.add(layeredPane_picturesChangePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 520, 150));
 
         label_browseForMorePictures.setForeground(new java.awt.Color(0, 0, 204));
         label_browseForMorePictures.setText("Browse for more pictures");
-        panel_changeAccountPicture.add(label_browseForMorePictures, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 170, 30));
+        label_browseForMorePictures.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_browseForMorePicturesMouseClicked(evt);
+            }
+        });
+        panel_changeAccountPicture.add(label_browseForMorePictures, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 170, 30));
 
         tabbedPane_userAccount.addTab("Change account picture", panel_changeAccountPicture);
 
@@ -366,7 +419,7 @@ public class ControlPanel extends javax.swing.JInternalFrame {
 
         tabbedPane_userAccount.addTab("Change Account Type", jPanel1);
 
-        desktopPane_userAccount.add(tabbedPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 480));
+        desktopPane_userAccount.add(tabbedPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 790, 480));
 
         getContentPane().add(desktopPane_userAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 790, 480));
 
@@ -396,6 +449,10 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         actions.actionPassword(new String(pass_currentPass.getPassword()), new String(pass_newPass.getPassword()), new String(pass_confirmPass.getPassword()));
     }//GEN-LAST:event_btn_changePasswordActionPerformed
 
+    private void label_browseForMorePicturesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_browseForMorePicturesMouseClicked
+        browseImage.browse(label_DPchangeAccountPicture);
+    }//GEN-LAST:event_label_browseForMorePicturesMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
@@ -415,9 +472,14 @@ public class ControlPanel extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
+    private javax.swing.JDesktopPane jDesktopPane3;
+    private javax.swing.JDesktopPane jDesktopPane4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel label_DPchangeAccountPicture;
     private javax.swing.JLabel label_accountName;
     private javax.swing.JLabel label_accountNameChangeAccountName;
     private javax.swing.JLabel label_accountNameChangeAccountType;
@@ -477,6 +539,9 @@ public class ControlPanel extends javax.swing.JInternalFrame {
         }
         if (actions == null) {
             actions = new Actions(loginId);
+        }
+        if(browseImage==null){
+            browseImage=new BrowseImage();
         }
     }
 
