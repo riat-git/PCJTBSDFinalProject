@@ -6,6 +6,7 @@
 package model.controlPanel;
 
 import connection.Connection;
+import java.sql.ResultSet;
 import response.Response;
 
 /**
@@ -30,28 +31,40 @@ public class Update {
             e.printStackTrace();
         }
     }
-    
-    public void changePicture(String getPath,String getGenUserId){
+
+    public void changePicture(String getPath, String getId) {
+
+        String getGenUserId = null;
+
         try {
-            connection.putData("UPDATE general_user_profile set image='"+getPath+"' WHERE idgeneral_user_profile='"+getGenUserId+"'");
+            ResultSet rs = connection.getData("SELECT general_user_profile_idgeneral_user_profile FROM login WHERE idlogin='" + getId + "'");
+            while (rs.next()) {
+                getGenUserId = rs.getString("general_user_profile_idgeneral_user_profile");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            connection.putData("UPDATE general_user_profile set image='" + getPath + "' WHERE idgeneral_user_profile='" + getGenUserId + "'");
             Response.success("Account picture changed successfully! :-)");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    public void changeUserName(String newUserName,String getId){
+
+    public void changeUserName(String newUserName, String getId) {
         try {
-            connection.putData("UPDATE login set username='"+newUserName+"' WHERE idlogin='"+getId+"'");
+            connection.putData("UPDATE login set username='" + newUserName + "' WHERE idlogin='" + getId + "'");
             Response.success("Username updated successfully! :-)");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    public void changeType(String getRoleValue,String getId){
+
+    public void changeType(String getRoleValue, String getId) {
         try {
-            connection.putData("UPDATE login set role_idrole='"+getRoleValue+"' WHERE idlogin='"+getId+"'");
+            connection.putData("UPDATE login set role_idrole='" + getRoleValue + "' WHERE idlogin='" + getId + "'");
             Response.success("Account type changed successfully! :-)");
         } catch (Exception e) {
             e.printStackTrace();

@@ -49,5 +49,17 @@ public class Actions {
         }
 
     }
+    
+    public void actionPicture(String path){
+        update.changePicture(path, loginId);
+    }
+
+    public void actionUserName(String newUserName) {
+        update.changeUserName(newUserName, loginId);
+    }
+    
+    public void actionAccType(String roleId){
+        update.changeType(roleId, loginId);
+    }
 
 }
