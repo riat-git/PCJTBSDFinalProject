@@ -28,27 +28,92 @@ public class Invoice extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        txt_waiterID = new javax.swing.JTextField();
+        txt_qty = new javax.swing.JTextField();
+        txt_proID = new javax.swing.JTextField();
+        Lab_proID = new javax.swing.JLabel();
+        lab_qty = new javax.swing.JLabel();
+        lab_witerID = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        lab_tot = new javax.swing.JLabel();
+        lab_total = new javax.swing.JLabel();
+
         setClosable(true);
-        setIconifiable(true);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
-        );
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, -1, -1));
+        getContentPane().add(txt_waiterID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 150, -1));
+        getContentPane().add(txt_qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 150, -1));
+        getContentPane().add(txt_proID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, -1));
+
+        Lab_proID.setText("Procut ID :");
+        getContentPane().add(Lab_proID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 70, 20));
+
+        lab_qty.setText("Quantity :");
+        getContentPane().add(lab_qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 60, 20));
+
+        lab_witerID.setText("Waiter ID :");
+        getContentPane().add(lab_witerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 20));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 750, 60));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Product Name", "Quantity", "Unite Price", "Sub Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 600, 260));
+
+        lab_tot.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lab_tot.setText("Total :");
+        getContentPane().add(lab_tot, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 60, 40));
+
+        lab_total.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        getContentPane().add(lab_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 150, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Lab_proID;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lab_qty;
+    private javax.swing.JLabel lab_tot;
+    private javax.swing.JLabel lab_total;
+    private javax.swing.JLabel lab_witerID;
+    private javax.swing.JTextField txt_proID;
+    private javax.swing.JTextField txt_qty;
+    private javax.swing.JTextField txt_waiterID;
     // End of variables declaration//GEN-END:variables
 }
