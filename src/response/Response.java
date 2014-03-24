@@ -18,6 +18,6 @@ public class Response {
     }
 
     public static void error(String response) {
-        JOptionPane.showMessageDialog(null, response, "Success", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, response, "ERROR", JOptionPane.ERROR_MESSAGE);
     }
 }
