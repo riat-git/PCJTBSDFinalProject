@@ -40,8 +40,10 @@ public class Invoice extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         lab_tot = new javax.swing.JLabel();
         lab_total = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
+        setTitle("Invoice");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -93,10 +95,16 @@ public class Invoice extends javax.swing.JInternalFrame {
 
         lab_tot.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lab_tot.setText("Total :");
-        getContentPane().add(lab_tot, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 60, 40));
+        getContentPane().add(lab_tot, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 60, 40));
 
         lab_total.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        getContentPane().add(lab_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 150, 40));
+        lab_total.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lab_total.setText("454");
+        lab_total.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        getContentPane().add(lab_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 150, 40));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 250, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,6 +114,7 @@ public class Invoice extends javax.swing.JInternalFrame {
     private javax.swing.JLabel Lab_proID;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lab_qty;
